@@ -2,15 +2,41 @@
 // Buttons
 // --------------------------------------------------
 
+// Variables
+// -------------------------
+$btnBackground:                     $white !default;
+$btnBackgroundHighlight:            darken($white, 10%) !default;
+$btnBorder:                         #bbb !default;
+
+$btnPrimaryBackground:              #9ec350 !default;
+$btnPrimaryBackgroundHighlight:     #8db23d !default;
+
+$btnInfoBackground:                 #5bc0de !default;
+$btnInfoBackgroundHighlight:        #2f96b4 !default;
+
+$btnSuccessBackground:              #62c462 !default;
+$btnSuccessBackgroundHighlight:     #51a351 !default;
+
+$btnWarningBackground:              lighten($orange, 15%) !default;
+$btnWarningBackgroundHighlight:     $orange !default;
+
+$btnDangerBackground:               #ee5f5b !default;
+$btnDangerBackgroundHighlight:      #bd362f !default;
+
+$btnInverseBackground:              #444 !default;
+$btnInverseBackgroundHighlight:     $grayDarker !default;
 
 // Mixins
 // ------------------
 @mixin buttonBackground($startColor, $endColor, $textColor: #fff, $textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
   // gradientBar will set the background to a pleasing blend of these, to support IE<=9
-  @include gradientBar($startColor, $endColor, $textColor, $textShadow);
-  *background-color: $endColor; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  
+  color: $textColor;
+  @include gradient-vertical($startColor, $endColor);
+  border-color: $endColor $endColor darken($endColor, 15%);
+  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fade-in(rgba(0,0,0,.1), 0.15);
+  *background-color: $endColor;
 
-  // in these cases the gradient won't cover the background, so we override
   &:hover, &:active, &.active, &.disabled, &[disabled] {
     color: $textColor;
     background-color: $endColor;
@@ -44,7 +70,7 @@
   border-bottom-color: darken($btnBorder, 10%);
   @include border-radius($baseBorderRadius);
   @include ie7-restore-left-whitespace(); // Give IE7 some love
-  @include box-shadow(0 1px 2px rgba(0,0,0,.05));
+  @include box-shadow(0 1px 2px rgba(0,0,0,.3));
 
   // Hover state
   &:hover {
@@ -89,8 +115,6 @@
 // Large
 .btn-large {
   padding: $paddingLarge;
-  font-size: $fontSizeLarge;
-  @include border-radius($borderRadiusLarge);
 }
 .btn-large [class^="icon-"],
 .btn-large [class*=" icon-"] {
