@@ -318,8 +318,8 @@
   border-color: transparent #ddd #ddd #ddd;
 }
 
-// LEFT & RIGHT
-// ------------
+// LEFT & RIGHT & CENTERED
+// -----------------------
 
 // Common styles
 .tabs-left > .nav-tabs > li,
@@ -331,6 +331,17 @@
   min-width: 74px;
   margin-right: 0;
   margin-bottom: 3px;
+}
+
+// Tabs in the middle
+.tabs-centered {
+  > .nav-tabs {
+    text-align: center;
+    > li {
+      float: none;
+      display: inline-block;
+    }
+  }
 }
 
 // Tabs on the left

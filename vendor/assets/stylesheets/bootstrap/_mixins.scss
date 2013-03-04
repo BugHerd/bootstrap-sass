@@ -196,7 +196,7 @@
 // --------------------------------------------------
 
 // Border Radius
-@mixin border-radius($radius) {
+@mixin border-radius($radius: $baseBorderRadius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
           border-radius: $radius;
@@ -243,11 +243,11 @@
 }
 
 // Drop shadows
-@mixin box-shadow($shadow...) { 
-  -webkit-box-shadow: $shadow;
-     -moz-box-shadow: $shadow;
-          box-shadow: $shadow;
-}
+// @mixin box-shadow($shadow...) { 
+//   -webkit-box-shadow: $shadow;
+//      -moz-box-shadow: $shadow;
+//           box-shadow: $shadow;
+// }
 
 // Transitions
 @mixin transition($transition...) {
@@ -342,6 +342,22 @@
       -ms-user-select: $select;
        -o-user-select: $select;
           user-select: $select;
+}
+
+@mixin text-wrap() { // http://perishablepress.com/press/2010/06/01/wrapping-content/
+  white-space: pre;           // CSS 2.0
+  white-space: pre-wrap;      // CSS 2.1
+  white-space: pre-line;      // CSS 3.0
+  white-space: -pre-wrap;     // Opera 4-6
+  white-space: -o-pre-wrap;   // Opera 7
+  white-space: -hp-pre-wrap;  // HP Printers
+  white-space: -moz-pre-wrap; // Mozilla
+  word-wrap: break-word;      // IE 5+
+}
+@mixin text-hide() { // http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+  overflow: hidden;
+  text-indent: 200%;
+  white-space: nowrap;
 }
 
 // Resize anything

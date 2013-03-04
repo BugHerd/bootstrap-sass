@@ -5,6 +5,56 @@
 
 // Global values
 // --------------------------------------------------
+// -- text colors
+$colorText:             #333;
+$colorLinks:            #57acd0;
+$colorLinksFaded:       desaturate($colorLinks, 15%);
+    
+// -- images    
+$sidebarSprite:         asset-path("sidebar-sprites.png", image);
+
+// -- background colors
+$colorFormsBG:          #f1f6f8;
+$colorBlueHilite:       #3f8ec8;
+$colorSelected:         #3f8ec8;
+$colorEggshell:         #fff; // #f9f9f7;
+$colorDark:             #333840;
+$body-color:            #333;
+$panel-shadow:          rgba(0,0,0,.02) 0 1px 0, rgba(0,0,0,.15) 0 1px 3px;
+$panelHeadColor:        #8398a4;
+$highlightBlue:         #7cc5e7;
+    
+// -- status colors   
+$colorValid:            #99cb58;
+$colorInvalid:          #ea524a;
+$colorNeutral:          #a5bdca;
+
+// -- priority colors
+$colorP0:               #ccc;
+$colorP1:               #d46060;
+$colorP2:               #e8b019;
+$colorP3:               #60c5d4;
+$colorP4:               #8bb863;
+$colorP0:               #ccc;
+    
+// -- button colors   
+$buttonDefault:         #70b0d1;
+$buttonConfirm:         desaturate(darken($colorValid,2%),10%);
+
+// -- font stacks   
+$bodyStack:             "Open Sans", "lucida grande","lucida sans unicode","lucida sans",sans-serif;
+$titleStack:            "Nunito","Helvetica Rounded","Arial Rounded",sans-serif;
+    
+// -- font sizes    
+$smallText:             12px;
+$miniText:              11px;
+$baselineText:          14px;
+$smallText:             12px;
+$miniText:              11px;
+    
+$rightPaneWidth:        300px;
+$sidebarSprite:         (asset-url("sidebar-sprites.png", image));
+
 
 
 // Grays
@@ -33,7 +83,7 @@ $purple:                #7a43b6 !default;
 // Scaffolding
 // -------------------------
 $bodyBackground:        $white !default;
-$textColor:             $grayDark !default;
+$textColor:             #4c5664 !default;
 
 
 // Links
@@ -44,17 +94,17 @@ $linkColorHover:        darken($linkColor, 15%) !default;
 
 // Typography
 // -------------------------
-$sansFontFamily:        "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$serifFontFamily:       Georgia, "Times New Roman", Times, serif !default;
-$monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace !default;
+$sansFontFamily:        "proxima-nova-alt", "helvetica neue", helvetica, arial, sans-serif !default;
+$serifFontFamily:       georgia, "times new roman", times, serif !default;
+$monoFontFamily:        monaco, menlo, consolas, "courier new", monospace !default;
 
-$baseFontSize:          14px !default;
+$baseFontSize:          16px !default;
 $baseFontFamily:        $sansFontFamily !default;
-$baseLineHeight:        20px !default;
+$baseLineHeight:        1.3 !default;
 $altFontFamily:         $serifFontFamily !default;
 
-$headingsFontFamily:    inherit !default; // empty to use BS default, $baseFontFamily
-$headingsFontWeight:    bold !default;    // instead of browser default, bold
+$headingsFontFamily:    "museo-sans-rounded", "museo-sans", "nunito", "helvetica neue", arial, helvetica, sans-serif !default; // empty to use BS default, $baseFontFamily
+$headingsFontWeight:    200 !default;    // instead of browser default, bold
 $headingsColor:         inherit !default; // empty to use BS default, $textColor
 
 
@@ -157,14 +207,14 @@ $navbarCollapseWidth:             979px !default;
 $navbarCollapseDesktopWidth:      $navbarCollapseWidth + 1;
 
 $navbarHeight:                    40px !default;
-$navbarPadding:                   (($navbarHeight - $baseLineHeight) / 2) !default;
+$navbarPadding:                   (($navbarHeight - $baseLineHeight) / 3) !default;
 $navbarBackgroundHighlight:       #ffffff !default;
 $navbarBackground:                darken($navbarBackgroundHighlight, 5%) !default;
 $navbarBorder:                    darken($navbarBackground, 12%) !default;
 
 $navbarText:                      #777 !default;
-$navbarLinkColor:                 #777 !default;
-$navbarLinkColorHover:            $grayDark !default;
+$navbarLinkColor:                 tint(lighten(#343d46, 25%), 20%) !default;
+$navbarLinkColorHover:            tint(lighten(#343d46, 60%), 50%) !default;
 $navbarLinkColorActive:           $gray !default;
 $navbarLinkBackgroundHover:       transparent !default;
 $navbarLinkBackgroundActive:      darken($navbarBackground, 5%) !default;
@@ -219,8 +269,8 @@ $successText:             #468847 !default;
 $successBackground:       #dff0d8 !default;
 $successBorder:           darken(adjust-hue($successBackground, -10), 5%) !default;
 
-$infoText:                #3a87ad !default;
-$infoBackground:          #d9edf7 !default;
+$infoText:                #537a8d !default;
+$infoBackground:          #cedbe0 !default;
 $infoBorder:              darken(adjust-hue($infoBackground, -10), 7%) !default;
 
 
