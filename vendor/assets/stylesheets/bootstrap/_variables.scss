@@ -59,12 +59,12 @@ $sidebarSprite:         (asset-url("sidebar-sprites.png", image));
 
 // Grays
 // -------------------------
-$black:                 #000 !default;
-$grayDarker:            #222 !default;
-$grayDark:              #333 !default;
-$gray:                  #555 !default;
-$grayLight:             #999 !default;
-$grayLighter:           #eee !default;
+$black:                 #4c5664 !default;
+$grayDarker:            lighten($black, 10%) !default;
+$grayDark:              lighten($black, 20%) !default;
+$gray:                  lighten($black, 30%) !default;
+$grayLight:             lighten($black, 40%) !default;
+$grayLighter:           lighten($black, 60%) !default;
 $white:                 #fff !default;
 
 
@@ -83,7 +83,7 @@ $purple:                #7a43b6 !default;
 // Scaffolding
 // -------------------------
 $bodyBackground:        $white !default;
-$textColor:             #4c5664 !default;
+$textColor:             $black !default;
 
 
 // Links
@@ -104,7 +104,7 @@ $baseLineHeight:        1.3 !default;
 $altFontFamily:         $serifFontFamily !default;
 
 $headingsFontFamily:    "museo-sans-rounded", "museo-sans", "nunito", "helvetica neue", arial, helvetica, sans-serif !default; // empty to use BS default, $baseFontFamily
-$headingsFontWeight:    200 !default;    // instead of browser default, bold
+$headingsFontWeight:    300 !default;    // instead of browser default, bold
 $headingsColor:         inherit !default; // empty to use BS default, $textColor
 
 
@@ -116,7 +116,7 @@ $fontSizeLarge:         $baseFontSize * 1.25; // ~18px
 $fontSizeSmall:         $baseFontSize * 0.85; // ~12px
 $fontSizeMini:          $baseFontSize * 0.75; // ~11px
 
-$paddingLarge:          8px 20px 9px !default; // 44px
+$paddingLarge:          12px 50px 14px !default; // 44px
 $paddingSmall:          2px 10px !default;  // 26px
 $paddingMini:           0px 6px !default;   // 22px
 
@@ -132,16 +132,14 @@ $tableBackgroundAccent:             #f9f9f9 !default; // for striping
 $tableBackgroundHover:              #f5f5f5 !default; // for hover
 $tableBorder:                       #ddd !default; // table and cell border
 
-<<<<<<< HEAD
-=======
 // Buttons
 // -------------------------
 $btnBackground:                     $white !default;
 $btnBackgroundHighlight:            darken($white, 10%) !default;
 $btnBorder:                         #ccc !default;
 
-$btnPrimaryBackground:              $linkColor !default;
-$btnPrimaryBackgroundHighlight:     adjust-hue($btnPrimaryBackground, 20%) !default;
+$btnPrimaryBackground:              #9cc14e !default; //$linkColor !default;
+$btnPrimaryBackgroundHighlight:     darken($btnPrimaryBackground, 10%); //adjust-hue($btnPrimaryBackground, 20%) !default;
 
 $btnInfoBackground:                 #5bc0de !default;
 $btnInfoBackgroundHighlight:        #2f96b4 !default;
@@ -158,7 +156,6 @@ $btnDangerBackgroundHighlight:      #bd362f !default;
 $btnInverseBackground:              #444 !default;
 $btnInverseBackgroundHighlight:     $grayDarker !default;
 
->>>>>>> 993dcf0ccf2d60858cd7fe6239a8982bbeef2ebf
 
 // Forms
 // -------------------------
@@ -305,7 +302,7 @@ $infoBorder:              darken(adjust-hue($infoBackground, -10), 7%) !default;
 // -------------------------
 $tooltipColor:            #fff !default;
 $tooltipBackground:       #000 !default;
-$tooltipArrowWidth:       5px !default;
+$tooltipArrowWidth:       7px !default;
 $tooltipArrowColor:       $tooltipBackground !default;
 
 $popoverBackground:       #fff !default;
@@ -326,8 +323,8 @@ $popoverArrowOuterColor:  rgba(0,0,0,.25) !default;
 // Default 940px grid
 // -------------------------
 $gridColumns:             12 !default;
-$gridColumnWidth:         60px !default;
-$gridGutterWidth:         20px !default;
+$gridColumnWidth:         45px !default;
+$gridGutterWidth:         35px !default;
 $gridRowWidth:            ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridColumns - 1)) !default;
 
 // 1200px min
