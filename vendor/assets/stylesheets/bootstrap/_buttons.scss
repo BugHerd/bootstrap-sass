@@ -2,53 +2,7 @@
 // Buttons
 // --------------------------------------------------
 
-// Variables
-// -------------------------
-$btnBackground:                     $white !default;
-$btnBackgroundHighlight:            darken($white, 10%) !default;
-$btnBorder:                         #bbb !default;
 
-$btnPrimaryBackground:              #9ec350 !default;
-$btnPrimaryBackgroundHighlight:     #8db23d !default;
-
-$btnInfoBackground:                 #5bc0de !default;
-$btnInfoBackgroundHighlight:        #2f96b4 !default;
-
-$btnSuccessBackground:              #62c462 !default;
-$btnSuccessBackgroundHighlight:     #51a351 !default;
-
-$btnWarningBackground:              lighten($orange, 15%) !default;
-$btnWarningBackgroundHighlight:     $orange !default;
-
-$btnDangerBackground:               #ee5f5b !default;
-$btnDangerBackgroundHighlight:      #bd362f !default;
-
-$btnInverseBackground:              #444 !default;
-$btnInverseBackgroundHighlight:     $grayDarker !default;
-
-// Mixins
-// ------------------
-@mixin buttonBackground($startColor, $endColor, $textColor: #fff, $textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
-  // gradientBar will set the background to a pleasing blend of these, to support IE<=9
-  
-  color: $textColor;
-  @include gradient-vertical($startColor, $endColor);
-  border-color: $endColor $endColor darken($endColor, 15%);
-  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fade-in(rgba(0,0,0,.1), 0.15);
-  *background-color: $endColor;
-
-  &:hover, &:active, &.active, &.disabled, &[disabled] {
-    color: $textColor;
-    background-color: $endColor;
-    *background-color: darken($endColor, 5%);
-  }
-
-  // IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
-  &:active,
-  &.active {
-    background-color: darken($endColor, 10%) \9;
-  }
-}
 
 // Base styles
 // --------------------------------------------------
@@ -57,7 +11,7 @@ $btnInverseBackgroundHighlight:     $grayDarker !default;
 .btn {
   display: inline-block;
   @include ie7-inline-block();
-  padding: 4px 12px;
+  padding: 7px 15px;
   margin-bottom: 0; // For input.btn
   font-size: $baseFontSize;
   line-height: $baseLineHeight;
@@ -65,12 +19,13 @@ $btnInverseBackgroundHighlight:     $grayDarker !default;
   vertical-align: middle;
   cursor: pointer;
   @include buttonBackground($btnBackground, $btnBackgroundHighlight, $grayDark, 0 1px 1px rgba(255,255,255,.75));
-  border: 1px solid $btnBorder;
-  *border: 0; // Remove the border to prevent IE7's black border on input:focus
-  border-bottom-color: darken($btnBorder, 10%);
-  @include border-radius($baseBorderRadius);
+  //border: 1px solid $btnBorder;
+  //*border: 0; // Remove the border to prevent IE7's black border on input:focus
+  //border-bottom-color: darken($btnBorder, 10%);
+  border-width: 1px;
+  @include border-radius;
   @include ie7-restore-left-whitespace(); // Give IE7 some love
-  @include box-shadow(0 1px 2px rgba(0,0,0,.3));
+  @include box-shadow(0 1px 3px rgba(0,0,0,.3));
 
   // Hover/focus state
   &:hover,
@@ -116,6 +71,7 @@ $btnInverseBackgroundHighlight:     $grayDarker !default;
 // Large
 .btn-large {
   padding: $paddingLarge;
+  @include border-radius(4px);
 }
 .btn-large [class^="icon-"],
 .btn-large [class*=" icon-"] {
@@ -209,6 +165,38 @@ input[type="button"] {
 // Inverse appears as dark gray
 .btn-inverse {
   @include buttonBackground($btnInverseBackground, $btnInverseBackgroundHighlight);
+}
+
+// Simple button styles
+// --------------------------------------------------
+.btn-simple {
+  @include box-shadow(none);
+  @include border-radius(4px);
+  //padding: 10px 20px;
+  background: $btnBackground;
+  &.btn-primary {
+    background: $btnPrimaryBackground;
+  }
+  // Warning appears are orange
+  &.btn-warning {
+    background: $btnWarningBackground;
+  }
+  // Danger and error appear as red
+  &.btn-danger {
+    background: $btnDangerBackground;
+  }
+  // Success appears as green
+  &.btn-success {
+    background: $btnSuccessBackground;
+  }
+  // Info appears as a neutral blue
+  &.btn-info {
+    background: $btnInfoBackground;
+  }
+  // Inverse appears as dark gray
+  &.btn-inverse {
+    background: $btnInverseBackground;
+  }
 }
 
 
