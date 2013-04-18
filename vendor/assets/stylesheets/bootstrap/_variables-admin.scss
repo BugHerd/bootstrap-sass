@@ -94,7 +94,7 @@ $linkColorHover:        darken($linkColor, 15%) !default;
 
 // Typography
 // -------------------------
-$sansFontFamily:        "proxima-nova-alt", "helvetica neue", helvetica, arial, sans-serif !default;
+$sansFontFamily:        "Open Sans","lucida grande","lucida sans unicode","lucida sans", "proxima-nova-alt", "helvetica neue", helvetica, arial, sans-serif !default;
 $serifFontFamily:       georgia, "times new roman", times, serif !default;
 $monoFontFamily:        monaco, menlo, consolas, "courier new", monospace !default;
 
@@ -104,7 +104,7 @@ $baseLineHeight:        1.3 !default;
 $baseFixedLineHeight:   24px !default;
 $altFontFamily:         $serifFontFamily !default;
 
-$headingsFontFamily:    "museo-sans", "nunito", "helvetica neue", arial, helvetica, sans-serif !default;
+$headingsFontFamily:    "Nunito", "museo-sans", "nunito", "helvetica neue", arial, helvetica, sans-serif !default;
 $headingsFontWeight:    300 !default;
 $headingsColor:         inherit !default;
 
@@ -144,7 +144,7 @@ $btnBorder:                         #ccc !default;
 $btnPrimaryBackground:              #9cc14e !default; //$linkColor !default;
 $btnPrimaryBackgroundHighlight:     darken($btnPrimaryBackground, 10%); //adjust-hue($btnPrimaryBackground, 20%) !default;
 
-$btnInfoBackground:                 #66b1e0 !default;
+$btnInfoBackground:                 #5bc0de !default;
 $btnInfoBackgroundHighlight:        darken($btnInfoBackground, 10%) !default;
 
 $btnSuccessBackground:              #62c462 !default;

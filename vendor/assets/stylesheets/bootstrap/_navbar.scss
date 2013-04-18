@@ -19,7 +19,7 @@
 // Inner for background effects
 // Gradient is applied to its own element because overflow visible is not honored by IE when filter is present
 .navbar-inner {
-  min-height: $navbarHeight;
+  //min-height: $navbarHeight;
   padding-left:  20px;
   padding-right: 20px;
   //@include gradient-vertical($navbarBackgroundHighlight, $navbarBackground);
@@ -245,6 +245,9 @@
   padding: $navbarPadding 15px;
   color: $navbarLinkColor;
   text-decoration: none;
+}
+.navbar .nav.pull-right > li > a {
+  padding: $navbarPadding 0 $navbarPadding 30px;
 }
 .navbar .nav .dropdown-toggle .caret {
   margin-top: 8px;

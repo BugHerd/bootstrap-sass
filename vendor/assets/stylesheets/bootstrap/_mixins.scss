@@ -5,6 +5,16 @@
 
 // UTILITY MIXINS
 // --------------------------------------------------
+%input-style {
+  border: 1px solid #ccc;
+  @include border-radius(2px);
+  @include box-shadow(0 1px 1px rgba(0, 0, 0, 0.07) inset);
+  font-family: $bodyStack;
+  color: #333;
+  background: $white;
+  vertical-align: middle;
+  outline: none;
+}
 
 // Clearfix
 // --------
@@ -82,12 +92,15 @@
 @mixin placeholder($color: $placeholderText) {
   &:-moz-placeholder {
     color: $color;
+    font-weight: 400;
   }
   &:-ms-input-placeholder {
     color: $color;
+    font-weight: 400;
   }
   &::-webkit-input-placeholder {
     color: $color;
+    font-weight: 400;
   }
 }
 
@@ -416,8 +429,8 @@
 @mixin gradientBar($primaryColor, $secondaryColor, $textColor: #fff, $textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
   color: $textColor;
   @include gradient-vertical($primaryColor, $secondaryColor);
-  border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%);
-  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fade-in(rgba(0,0,0,.1), 0.15);
+  border-color: $secondaryColor $secondaryColor darken($secondaryColor, 25%);
+  border-color: rgba(0,0,0,.15) rgba(0,0,0,.15) fade-in(rgba(0,0,0,.15), 0.25);
 }
 
 // Gradients
@@ -501,6 +514,8 @@
   // gradientBar will set the background to a pleasing blend of these, to support IE<=9
   @include gradientBar($startColor, $endColor, $textColor, $textShadow);
   *background-color: $endColor; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  border-bottom-color: darken($endColor, 15%);
 
   // in these cases the gradient won't cover the background, so we override
   &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {

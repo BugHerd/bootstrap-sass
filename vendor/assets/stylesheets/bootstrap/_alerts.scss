@@ -20,6 +20,8 @@
 }
 .alert h4 {
   margin: 0;
+  font-weight: 600;
+  font-size: $baseFontSize;
 }
 
 // Adjust close link position
@@ -68,11 +70,33 @@
 .alert-block {
   padding-top: 14px;
   padding-bottom: 14px;
+  form & {
+    // @include border-radius(0);
+    // border-top: 0;
+    // border-left: 0;
+    // border-right: 0;
+    margin: 5px 0 20px;
+  }
 }
 .alert-block > p,
 .alert-block > ul {
-  margin-bottom: 0;
+  margin: 10px 0 0;
+  padding-left: 0;
+  list-style: inside;
+}
+.alert-block li {
+  margin: 2px 0;
+  padding-left: 5px;
+  list-style: none;
+  &:before {
+    position: relative;
+    left: -5px;
+    content: "\2022";
+    font-size: .5;
+  }
 }
 .alert-block p + p {
   margin-top: 5px;
 }
+
+

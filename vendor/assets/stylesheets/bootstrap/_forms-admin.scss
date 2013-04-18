@@ -22,9 +22,9 @@ legend {
   display: block;
   width: 100%;
   padding: 0;
-  //margin-bottom: $baseFixedLineHeight;
+  margin-bottom: $baseFixedLineHeight;
   //font-size: $baseFontSize * 1.5;
-  //font-size: $baseFontSize / 1.2;
+  font-size: $baseFontSize / 1.2;
   line-height: $baseFixedLineHeight * 2;
   //color: $grayDark;
   color: $textColor;
@@ -83,12 +83,12 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   display: inline-block;
-  height: $baseFixedLineHeight;
+  //height: $baseFixedLineHeight;
   padding: 4px 6px;
   margin-bottom: 15px;
-  font-size: $baseFontSize;
-  line-height: $baseFixedLineHeight;
-  font-weight: 700;
+  font-size: $baseFontSize - 3px;
+  //line-height: $baseFixedLineHeight;
+  font-weight: 500;
   color: $textColor;
   @include border-radius($inputBorderRadius);
   vertical-align: middle;// General classes for quick sizes

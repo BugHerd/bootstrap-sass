@@ -8,7 +8,7 @@
 // --------------------------------------------------
 
 // Core
-.btn {
+.btn, .button, .guider-button {
   display: inline-block;
   @include ie7-inline-block();
   padding: 7px 15px;
@@ -23,9 +23,10 @@
   //*border: 0; // Remove the border to prevent IE7's black border on input:focus
   //border-bottom-color: darken($btnBorder, 10%);
   border-width: 1px;
+  border-style: solid;
   @include border-radius;
   @include ie7-restore-left-whitespace(); // Give IE7 some love
-  @include box-shadow(0 1px 3px rgba(0,0,0,.3));
+  @include box-shadow(0 1px 3px rgba(0,0,0,.1));
 
   // Hover/focus state
   &:hover,
@@ -143,7 +144,7 @@ input[type="button"] {
 
 // Set the backgrounds
 // -------------------------
-.btn-primary {
+.btn-primary, .guider-button {
   @include buttonBackground($btnPrimaryBackground, $btnPrimaryBackgroundHighlight);
 }
 // Warning appears are orange
@@ -172,30 +173,49 @@ input[type="button"] {
 .btn-simple {
   @include box-shadow(none);
   @include border-radius(4px);
-  //padding: 10px 20px;
   background: $btnBackground;
+  border-color: lighten($textColor, 45%);
+  border-bottom-color: lighten($textColor, 45%);
+  &:hover {
+    background: inherit;
+  }
+  &.btn-transparent {
+    background: none;
+  }
   &.btn-primary {
     background: $btnPrimaryBackground;
+    border-color: darken($btnPrimaryBackground, 10%);
+    border-bottom-color: darken($btnPrimaryBackground, 10%);
   }
   // Warning appears are orange
   &.btn-warning {
     background: $btnWarningBackground;
+    border-color: darken($btnWarningBackground, 10%);
+    border-bottom-color: darken($btnWarningBackground, 10%);
   }
   // Danger and error appear as red
   &.btn-danger {
     background: $btnDangerBackground;
+    border-color: darken($btnDangerBackground, 10%);
+    border-bottom-color: darken($btnDangerBackground, 10%);
   }
   // Success appears as green
   &.btn-success {
     background: $btnSuccessBackground;
+    border-color: darken($btnSuccessBackground, 10%);
+    border-bottom-color: darken($btnSuccessBackground, 10%);
   }
   // Info appears as a neutral blue
   &.btn-info {
     background: $btnInfoBackground;
+    border-color: darken($btnInfoBackground, 10%);
+    border-bottom-color: darken($btnInfoBackground, 10%);
   }
   // Inverse appears as dark gray
   &.btn-inverse {
     background: $btnInverseBackground;
+    border-color: darken($btnInverseBackground, 10%);
+    border-bottom-color: darken($btnInverseBackground, 10%);
   }
 }
 
